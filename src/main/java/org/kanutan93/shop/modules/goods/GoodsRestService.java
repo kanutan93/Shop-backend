@@ -10,7 +10,7 @@ import javax.ws.rs.ext.Provider;
 import java.util.List;
 
 
-@Path("groups")
+@Path("goods")
 @Provider
 @Produces(MediaType.APPLICATION_JSON)
 public class GoodsRestService {
@@ -18,19 +18,19 @@ public class GoodsRestService {
     private GoodsService goodsService;
 
     @GET
-    public List<Good> getGoods(@QueryParam("search") String filter){
-        return goodsService.getGoods(filter);
+    public List<Good> getGoods(@QueryParam("search") String filter, @QueryParam("page") int page){
+        return goodsService.getGoods(filter, page);
     }
 
     @POST
     @Path("new")
-    public Good createGoods(Good good){
+    public Good createGoods(Good good) throws NoSuchFieldException, IllegalAccessException {
         return goodsService.createGood(good);
     }
 
     @PUT
     @Path("update")
-    public Good updateGoods(Good good){
+    public Good updateGoods(Good good) throws NoSuchFieldException, IllegalAccessException {
         return goodsService.updateGood(good);
     }
 

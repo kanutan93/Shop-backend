@@ -8,23 +8,27 @@ import java.util.List;
 import java.util.Map;
 
 public class User {
-    @JsonProperty("_id")
-    String _id;
-    @JsonProperty("name")
-    String name;
-    @JsonProperty("email")
-    String email;
-    @JsonProperty("orders")
-    List<Order> orders;
+    private String name;
+    private String email;
+    private List<Order> orders;
 
-
-    //TODO МБ убрать аннотации @JsonProperty
     @JsonCreator
     public User(Map<String, Object> props){
-        this._id = (String) props.get("_id");
         this.name = (String) props.get("name");
         this.email= (String) props.get("email");
         this.orders= (List<Order>) props.get("orders");
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 }

@@ -23,13 +23,14 @@ public class UsersRestService {
 
     @POST
     @Path("new")
-    public User createGoods(User good){
+    @Consumes(MediaType.APPLICATION_JSON)
+    public User createGoods(User good) throws IllegalAccessException, NoSuchFieldException {
         return usersService.createUser(good);
     }
 
     @PUT
     @Path("update")
-    public User updateGoods(User good){
+    public User updateGoods(User good) throws IllegalAccessException, NoSuchFieldException {
         return usersService.updateUser(good);
     }
 
