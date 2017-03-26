@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<enunciate>
+    <api-classes>
+            <include pattern="org.kanutan93.shop.modules.users.services" />
+            <include pattern="org.kanutan93.shop.modules.goods.services" />
+            <exclude pattern="org.jboss.resteasy.core.AsynchronousDispatcher" />
+            <exclude pattern="org.jboss.resteasy.plugins.stats.RegistryStatsResource" />
+        </api-classes>
+    <modules>
+        <docs  docsDir="docs"  disableRestMountpoint="false" />
+        <c-xml-client disabled="true" />
+        <csharp-xml-client disabled="true" />
+        <gwt-json-overlay disabled="true" />
+        <idl />
+        <java-json-client disabled="true" />
+        <java-xml-client  disabled="true" />
+        <jaxb disabled="true" />
+        <jackson disabled="true"/>
+        <jaxrs/>
+        <jaxws disabled="true" />
+        <obj-c-xml-client disabled="true" />
+        <php-json-client disabled="true" />
+        <php-xml-client disabled="true" />
+        <ruby-json-client disabled="true" />
+        <spring-web disabled="true" />
+        <swagger host="localhost:8180" basePath="/api/v2" />
+    </modules>
+</enunciate>

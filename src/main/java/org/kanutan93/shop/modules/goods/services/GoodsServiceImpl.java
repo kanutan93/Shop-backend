@@ -8,7 +8,6 @@ import org.kanutan93.shop.Const;
 import org.kanutan93.shop.modules.base.MongoGetCollection;
 import org.kanutan93.shop.modules.base.MongoProducer;
 import org.kanutan93.shop.modules.goods.models.Good;
-import org.kanutan93.shop.modules.users.models.User;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

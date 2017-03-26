@@ -28,8 +28,17 @@
     </dependencies>
   </dependencyManagement>
 
+  <properties>
+    <version.enunciate>2.2.0</version.enunciate>
+  </properties>
   <dependencies>
 
+    <dependency>
+      <groupId>com.webcohesion.enunciate</groupId>
+      <artifactId>enunciate-core-annotations</artifactId>
+      <version>${version.enunciate}</version>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.mongodb</groupId>
       <artifactId>mongodb-driver</artifactId>
@@ -126,6 +135,22 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.webcohesion.enunciate</groupId>
+        <artifactId>enunciate-maven-plugin</artifactId>
+        <version>${version.enunciate}</version>
+        <configuration>
+          <configFile>${basedir}/src/main/doc/enunciate/config.xml</configFile>
+          <docsDir>${project.build.directory}/docs</docsDir>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>docs</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
