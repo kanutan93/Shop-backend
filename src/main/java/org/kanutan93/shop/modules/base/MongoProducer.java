@@ -2,6 +2,7 @@ package org.kanutan93.shop.modules.base;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -14,7 +15,7 @@ public class MongoProducer {
     @Produces @MongoGetCollection
     private MongoCollection produceItem(InjectionPoint ip){
         MongoGetCollection mongoGetCollection = ip.getAnnotated().getAnnotation(MongoGetCollection.class);
-        MongoClient mongoClient = new MongoClient(new MongoClientURI(Const.URL));
+        MongoClient mongoClient = new MongoClient(new MongoClientURI(Const.HOST));
         MongoDatabase mongoDatabase = mongoClient.getDatabase(Const.DB);
         return mongoDatabase.getCollection(mongoGetCollection.collection());
     };
